@@ -2,6 +2,7 @@ open Parser
 open Ast
 open Hyper
 open Lexing
+open Opcodes
 
 let usage = "usage: assembler file.vr"
 
@@ -23,6 +24,6 @@ let () =
   try
     let f = Parser.fichier Lexer.token lb in
     close_in c;
-    (* Traitement de l'AST généré *)
+
   with
     | a -> raise a

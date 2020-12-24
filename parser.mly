@@ -38,4 +38,6 @@ instruction:
   | OR r1 = REGISTER r2 = REGISTER r3 = REGISTER {OR(r1, r2, r3)}
   | LOADI i = IMMEDIATE r = REGISTER {LOADI(i, r)}
   | JMP f = FLAG r = MEMADRESS {JMP(f, r)}
+  | NOP {ADD(0, 0, 0)}
+  | MOV r1 = REGISTER r2 = REGISTER {ADD(r1, 0, r2)}
 ;
