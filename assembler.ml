@@ -24,6 +24,6 @@ let () =
   try
     let f = Parser.fichier Lexer.token lb in
     close_in c;
-
+    Handling.handle f
   with
     | a -> raise a

@@ -17,6 +17,8 @@ open Ast
 %token XOR
 %token LOADI
 %token JMP
+%token NOP
+%token MOV
 
 %token EOL
 %token EOF
