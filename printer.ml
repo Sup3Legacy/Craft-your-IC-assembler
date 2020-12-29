@@ -77,7 +77,7 @@ let count_rom =
 let alternating_rom =
 	create_rom (fun i -> (fun j -> i mod 2 = j mod 2))
 
-(*    pc; flag;hl; ALU    ; read 1    ; imm 0-3   ; write     ; imm 7-4   ; read 2    ;*)
+(*    pc; flag;		hl; ALU    ; read 1    ; imm 0-3   ; write     ; imm 7-4   ; read 2    ;*)
 let nop =
 	[| 1; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0 |]
 let loadi_1_2 =
@@ -119,4 +119,3 @@ let () =
 	output_rom count_rom "count";
 	output_rom alternating_rom "alternating";
 	output_rom counter_rom "counter";
-

@@ -4,6 +4,7 @@ type immediate = int
 type flag = int
 
 type instruction =
+  | LABEL of string
   | STORE of register * memory
   | LOAD of register * memory
   | ADD of register * register * register
@@ -11,6 +12,6 @@ type instruction =
   | XOR of register * register * register
   | OR of register * register * register
   | LOADI of immediate * register
-  | JMP of flag * memory
+  | JMP of flag * string
 
 type fichier = instruction list
