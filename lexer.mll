@@ -29,5 +29,12 @@ rule token = parse
     | Some ins -> ins
   }
   | spaces* {token lexbuf}
+  | '#' {commentaire lexbuf}
   | '\n' {EOL}
+  | eof {EOF}
+;;
+
+rule commentaire = parse
+  | eol {token lexbuf}
+  | _ {commentaire lexbuf}
   | eof {EOF}
