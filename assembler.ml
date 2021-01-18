@@ -25,6 +25,7 @@ let () =
   try
     let f = Parser.fichier Lexer.token lb in
     close_in c;
-    let f = link_and_transform f in ()
+    let f = link_and_transform f in
+    Handling.handle f file
   with
     | a -> raise a

@@ -23,9 +23,6 @@ rule token = parse
     | None -> LABEL_OCC c
     | Some ins -> ins
   }
-  | '\"' (ident as i) '\"' {
-    LABEL_OCC i
-  }
   | spaces* {token lexbuf}
   | '#' {commentaire lexbuf}
   | '\n' {token lexbuf}
