@@ -40,4 +40,4 @@
 	# Update the screen and loop.
 	jmp print_hour
 .halt
-	halt
+	jmp halt

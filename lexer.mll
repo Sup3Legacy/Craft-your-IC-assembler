@@ -14,27 +14,24 @@ let ident = char+
 let spaces = ' ' | '\t'
 
 rule token = parse
-  | '.' ident as i {LABEL i}
-  | '%' nombre as i {REGISTER (int_of_string i)}
-  | '$' nombre as i {IMMEDIATE (int_of_string i)}
-  | '(' nombre as i ')' {MEMADRESS (int_of_string i)}
+  | '.' (ident as i) {LABEL i}
+  | '%' (nombre as i) {REGISTER (int_of_string i)}
+  | '$' (nombre as i) {IMMEDIATE (int_of_string i)}
+  | '(' (nombre as i) ')' {MEMADRESS (int_of_string i)}
   | ident as c { (* Peut être un identificateur d'instruction ou bien de flag *)
     match Hashtbl.find_opt Hyper.keywords c with
-    | None ->
-      begin
-        match Hashtbl.find_opt Hyper.string_to_flag c with
-        | None -> failwith ("unrecognized string " ^ c)
-        | Some f -> FLAG f
-      end
+    | None -> LABEL_OCC c
     | Some ins -> ins
+  }
+  | '\"' (ident as i) '\"' {
+    LABEL_OCC i
   }
   | spaces* {token lexbuf}
   | '#' {commentaire lexbuf}
-  | '\n' {EOL}
+  | '\n' {token lexbuf}
   | eof {EOF}
-;;
 
-rule commentaire = parse
-  | eol {token lexbuf}
+and commentaire = parse
+  | '\n' {token lexbuf}
   | _ {commentaire lexbuf}
   | eof {EOF}

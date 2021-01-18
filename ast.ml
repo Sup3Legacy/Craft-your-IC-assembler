@@ -12,6 +12,26 @@ type instruction =
   | XOR of register * register * register
   | OR of register * register * register
   | LOADI of immediate * register
-  | JMP of flag * string
+  | JMP of string
+  | JOF of string
+  | JNEG of string
+  | JZ of string
+  | PRINT of register * immediate
 
 type fichier = instruction list
+
+type linked_instruction = 
+  | L_STORE of register * memory
+  | L_LOAD of register * memory
+  | L_ADD of register * register * register
+  | L_SUB of register * register * register
+  | L_XOR of register * register * register
+  | L_OR of register * register * register
+  | L_LOADI of immediate * register
+  | L_JMP of int
+  | L_JOF of int
+  | L_JNEG of int
+  | L_JZ of int
+  | L_PRINT of register * immediate
+
+  type linked_fichier = linked_instruction list
