@@ -73,7 +73,7 @@ let fill_instruction instr matrix index =
   | L_SUB (r1, r2, r3) -> failwith "Not yet implemented"
   | L_XOR (r1, r2, r3) -> fill_word matrix ~incr_pc:true ~xor:true ~read1:r1 ~read2:r2 ~write:r3 index
   | L_OR (r1, r2, r3) -> fill_word matrix ~incr_pc:true ~or_val:true ~read1:r1 ~read2:r2 ~write:r3 index
-  | L_LOADI (i, r) -> fill_word matrix ~incr_pc:true ~write:r index
+  | L_LOADI (i, r) -> fill_word matrix ~imm:i ~incr_pc:true ~write:r index
   | L_JMP i -> fill_word matrix ~flag0:false ~flag1:false ~imm:i index
   | L_JOF i -> fill_word matrix ~flag0:true ~flag1:true ~imm:i index
   | L_JNEG i -> fill_word matrix ~flag0:true ~flag1:false ~imm:i index
