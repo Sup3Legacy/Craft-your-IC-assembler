@@ -80,9 +80,9 @@ let fill_instruction instr matrix index =
   | L_JZ i -> fill_word matrix ~flag0:false ~flag1:true ~imm:i index
   | L_PRINT (r, i) -> 
     match i with 
-    | 0 -> fill_word matrix ~or_val:true ~read2:r ~halt:true index
-    | 1 -> fill_word matrix ~xor:true ~read2:r ~halt:true index
-    | 2 -> fill_word matrix ~carry_in:true ~read2:r ~halt:true index
+    | 0 -> fill_word matrix ~incr_pc:true ~or_val:true ~read2:r ~halt:true index
+    | 1 -> fill_word matrix ~incr_pc:true ~xor:true ~read2:r ~halt:true index
+    | 2 -> fill_word matrix ~incr_pc:true ~carry_in:true ~read2:r ~halt:true index
     | _ -> failwith "Wrong number of screen."
 ;;
 
