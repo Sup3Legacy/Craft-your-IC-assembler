@@ -1,10 +1,10 @@
 .init
 	loadi $58 %2 # Seconds.
 	loadi $59 %3 # Minutes.
-	loadi $42 %4 # Hours.
+	loadi $12 %4 # Hours.
 	loadi $1 %5
-	loadi $58 %6
-	loadi $22 %7
+	loadi $59 %6
+	loadi $23 %7
 .print_hour
 	print %4 $2
 .print_min
