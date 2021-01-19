@@ -153,7 +153,7 @@ summon falling_block ~ ~1 ~ {Time:1,BlockState:{Name:air},Passengers:[
 {id:command_block_minecart,Command:'setblock -268 201 -1416 minecraft:air'},
 {id:command_block_minecart,Command:'setblock -266 201 -1416 minecraft:air'},
 {id:command_block_minecart,Command:'setblock -264 201 -1416 minecraft:redstone_wall_torch[facing=west]'},
-{id:command_block_minecart,Command:'setblock -262 201 -1416 minecraft:air'},
+{id:command_block_minecart,Command:'setblock -262 201 -1416 minecraft:redstone_wall_torch[facing=west]'},
 {id:command_block_minecart,Command:'setblock -260 201 -1416 minecraft:air'},
 {id:command_block_minecart,Command:'setblock -258 201 -1416 minecraft:air'},
 {id:command_block_minecart,Command:'setblock -256 201 -1416 minecraft:air'},
