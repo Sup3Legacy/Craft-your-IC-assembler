@@ -15,7 +15,11 @@
 	# Add a second.
 	add %5 %2 %2
 	# Check if there is a roll over.
-	sub %6 %2 %0
+	# sub %6 %2 %0
+	xor %2 %1 %2
+	loadi $1 %8
+	add %8 %2 %2
+	add %6 %2 %0
 	jneg min
 	# Update the screen and loop.
 	jmp print_sec
@@ -25,7 +29,11 @@
 	# Add a minute.
 	add %5 %3 %3
 	# Check if there is a roll over.
-	sub %6 %2 %0
+	# sub %6 %2 %0
+	xor %2 %1 %2
+	loadi $1 %8
+	add %8 %2 %2
+	add %6 %2 %0
 	jneg hour
 	# Update the screen and loop.
 	jmp print_min
@@ -35,7 +43,11 @@
 	# Add an hour.
 	add %5 %4 %4
 	# Check if there is a roll over.
-	sub %7 %2 %0
+	# sub %7 %2 %0
+	xor %2 %1 %2
+	loadi $1 %8
+	add %8 %2 %2
+	add %7 %2 %0
 	jneg halt
 	# Update the screen and loop.
 	jmp print_hour

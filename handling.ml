@@ -89,5 +89,5 @@ let fill_instruction instr matrix index =
 let handle parsed_file name =
   let res = Array.make_matrix 128 32 false in
   List.iteri (fun i x -> fill_instruction x res i) parsed_file;
-  Printer.output_rom res name
+  Printer.output_rom res (Filename.remove_extension (Filename.basename name))
 ;;
