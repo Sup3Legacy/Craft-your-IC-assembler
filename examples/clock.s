@@ -6,23 +6,19 @@
 	loadi $59 %6
 	loadi $23 %7
 .print_hour
-	print %2 $0
+	print %4 $2
 .print_min
 	print %3 $1
 .print_sec
-	print %4 $2
+	print %2 $0
 .sec
-	# Add a second.
-	add %5 %2 %2
-	# Check if there is a roll over.
-	# sub %6 %2 %0
-	xor %2 %1 %2
+	add %5 %2 %2# Add a second.
+	xor %2 %1 %2 # Check if there is a roll over. # sub %6 %2 %0
 	loadi $1 %8
 	add %8 %2 %2
 	add %6 %2 %0
 	jneg min
-	# Update the screen and loop.
-	jmp print_sec
+	jmp print_sec # Update the screen and loop.
 .min
 	# Reset the seconds.
 	loadi $0 %2
