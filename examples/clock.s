@@ -1,7 +1,7 @@
 .init
-	loadi $0 %2 # Seconds.
-	loadi $0 %3 # Minutes.
-	loadi $0 %4 # Hours.
+	loadi $58 %2 # Seconds.
+	loadi $59 %3 # Minutes.
+	loadi $42 %4 # Hours.
 	loadi $1 %5
 	loadi $59 %6
 	loadi $23 %7
@@ -12,7 +12,7 @@
 .print_sec
 	print %2 $0
 .sec
-	add %5 %2 %2# Add a second.
+	add %5 %2 %2 # Add a second.
 	xor %2 %1 %2 # Check if there is a roll over. # sub %6 %2 %0
 	loadi $1 %8
 	add %8 %2 %2
