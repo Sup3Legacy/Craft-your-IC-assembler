@@ -78,7 +78,12 @@ let fill_instruction instr matrix index =
   | L_JOF i -> fill_word matrix ~flag0:true ~flag1:true ~imm:i index
   | L_JNEG i -> fill_word matrix ~flag0:true ~flag1:false ~imm:i index
   | L_JZ i -> fill_word matrix ~flag0:false ~flag1:true ~imm:i index
-  | L_PRINT (r, i) -> failwith "Not implemented"
+  | L_PRINT (r, i) -> 
+    match i with 
+    | 0 -> fill_word matrix ~or_val:true ~read2:r ~halt:true index
+    | 1 -> fill_word matrix ~xor:true ~read2:r ~halt:true index
+    | 2 -> fill_word matrix ~carry_in:true ~read2:r ~halt:true index
+    | _ -> failwith "Wrong number of screen."
 ;;
 
 let handle parsed_file name =
