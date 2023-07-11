@@ -9,8 +9,8 @@ summon falling_block ~ ~1 ~ {Time:1,BlockState:{Name:air},Passengers:[
 {id:command_block_minecart,Command:'setblock 80 26 6 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 82 26 6 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 84 26 6 minecraft:air'},
-{id:command_block_minecart,Command:'setblock 86 26 6 minecraft:redstone_wall_torch[facing=west]'},
-{id:command_block_minecart,Command:'setblock 88 26 6 minecraft:air'},
+{id:command_block_minecart,Command:'setblock 86 26 6 minecraft:air'},
+{id:command_block_minecart,Command:'setblock 88 26 6 minecraft:redstone_wall_torch[facing=west]'},
 {id:command_block_minecart,Command:'setblock 90 26 6 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 92 26 6 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 94 26 6 minecraft:air'},
@@ -135,8 +135,8 @@ summon falling_block ~ ~1 ~ {Time:1,BlockState:{Name:air},Passengers:[
 {id:command_block_minecart,Command:'setblock 76 26 4 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 78 26 4 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 80 26 4 minecraft:air'},
-{id:command_block_minecart,Command:'setblock 82 26 4 minecraft:redstone_wall_torch[facing=west]'},
-{id:command_block_minecart,Command:'setblock 84 26 4 minecraft:air'},
+{id:command_block_minecart,Command:'setblock 82 26 4 minecraft:air'},
+{id:command_block_minecart,Command:'setblock 84 26 4 minecraft:redstone_wall_torch[facing=west]'},
 {id:command_block_minecart,Command:'setblock 86 26 4 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 88 26 4 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 90 26 4 minecraft:air'},
@@ -258,5 +258,5 @@ summon falling_block ~ ~1 ~ {Time:1,BlockState:{Name:air},Passengers:[
 {id:command_block_minecart,Command:'setblock 98 54 4 minecraft:air'},
 {id:command_block_minecart,Command:'setblock 100 54 4 minecraft:air'},
 {id:command_block_minecart,Command:'say Loading rom clock 3/16.'},
-{id:command_block_minecart,Command:'summon falling_block ~ ~1 ~ {Time:1,Passengers:[{id:command_block_minecart,Command:"killall minecarts sysnum"}]}'}
+{id:command_block_minecart,Command:'summon falling_block ~ ~1 ~ {Time:1,Passengers:[{id:command_block_minecart,Command:"kill @e[type=minecraft:command_block_minecart]"}]}'}
 ]}]}

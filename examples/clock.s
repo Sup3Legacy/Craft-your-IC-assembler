@@ -5,6 +5,7 @@
 	loadi $1 %5
 	loadi $59 %6
 	loadi $23 %7
+    add %0 %0 %9
 .print_hour
 	print %4 $2
 .print_min
