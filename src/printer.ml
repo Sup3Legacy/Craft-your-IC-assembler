@@ -49,7 +49,7 @@ let output_rom ?(x0=70) ?(y0=26) ?(z0=14) rom name =
 				fprintf fmt "{id:command_block_minecart,Command:'say Loading rom %s %d/%d.'},@." name (j / 2 + 1) 16;
 
 			(* Kill the minecarts. *)
-			fprintf fmt "{id:command_block_minecart,Command:'summon falling_block ~ ~1 ~ {Time:1,Passengers:[{id:command_block_minecart,Command:\"killall minecarts sysnum\"}]}'}@.]}]}@.";
+			fprintf fmt "{id:command_block_minecart,Command:'summon falling_block ~ ~1 ~ {Time:1,Passengers:[{id:command_block_minecart,Command:\"kill @e[type=minecraft:command_block_minecart]\"}]}'}@.]}]}@.";
 			close_out !oc;
 		end;
 	done;
