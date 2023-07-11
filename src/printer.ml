@@ -1,6 +1,6 @@
 open Format
 
-let output_rom ?(x0=(-278)) ?(y0=197) ?(z0=(-1402)) rom name =
+let output_rom ?(x0=70) ?(y0=26) ?(z0=14) rom name =
 	(* Check the ROM size. *)
 	if Array.length rom <> 128 then
 		failwith "The ROM must have 128 words.";
