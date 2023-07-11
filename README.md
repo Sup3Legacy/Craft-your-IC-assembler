@@ -1,5 +1,5 @@
-# V-RISC-Assembler-Minecraft
-An Assembleur for our Minecraft CPU:
+# Craft your IC - Assembler
+An Assembler for our Minecraft CPU:
 ![V-RISC-V-core](v-risc-v-core.png)
 
 ## Usage
